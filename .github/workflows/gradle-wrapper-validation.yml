@@ -10,7 +10,6 @@ on:
       - '**/gradle/wrapper/**'
 permissions:
   contents: read
-
 jobs:
   validation:
     runs-on: ubuntu-latest

@@ -7,7 +7,6 @@ on:
     paths:
       - 'src/**'
       - 'test/**'
-
 permissions:
   contents: read
 

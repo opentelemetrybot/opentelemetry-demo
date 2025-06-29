@@ -5,7 +5,6 @@ name: "Build and Publish"
 on:
   release:
     types: [published]
-
 permissions:
   contents: read
 

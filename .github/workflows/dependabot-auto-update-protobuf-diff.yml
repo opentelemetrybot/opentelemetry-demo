@@ -6,10 +6,7 @@ on:
     branches: [ main ]
 
 permissions:
-  actions: write
-  pull-requests: write
-  contents: write
-  packages: write
+  contents: read
 
 jobs:
   dependabot-auto-update-protobuf-diff:

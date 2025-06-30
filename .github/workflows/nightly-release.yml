@@ -6,7 +6,8 @@ on:
   schedule:
     # Runs at 00:00 UTC every day
     - cron: '0 0 * * *'
-
+permissions:
+  contents: read
 jobs:
   build_and_push_images:
     uses: ./.github/workflows/component-build-images.yml

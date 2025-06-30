@@ -6,8 +6,14 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: read
+
 jobs:
   build_and_push_images:
+    permissions:
+      contents: read
+      packages: write # required by the reusable workflow
     uses: ./.github/workflows/component-build-images.yml
     if: github.repository == 'open-telemetry/opentelemetry-demo'
     with:

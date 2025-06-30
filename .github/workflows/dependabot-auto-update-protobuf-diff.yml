@@ -6,14 +6,16 @@ on:
     branches: [ main ]
 
 permissions:
-  actions: write
-  pull-requests: write
-  contents: write
-  packages: write
+  contents: read
 
 jobs:
   dependabot-auto-update-protobuf-diff:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      pull-requests: write
+      contents: write
+      packages: write
     # Only run this job if the PR is opened by dependabot and the last commit is from dependabot
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:

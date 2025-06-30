@@ -24,7 +24,8 @@ on:
         default: 'ghcr.io/open-telemetry/demo'
         required: false
         type: string
-
+permissions:
+  contents: read
 jobs:
   protobufcheck:
     runs-on: ubuntu-latest

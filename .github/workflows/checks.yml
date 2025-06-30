@@ -9,9 +9,15 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   build_images:
     uses: ./.github/workflows/component-build-images.yml
+    permissions:
+      contents: read
+      packages: write
     with:
       push: false
       version: 'dev'

@@ -15,6 +15,8 @@ permissions:
 
 jobs:
   assign-reviewers:
+    permissions:
+      pull-requests: write  # required for assigning reviewers to PRs
     if: github.repository == 'open-telemetry/opentelemetry-demo'
     runs-on: ubuntu-latest
     steps:

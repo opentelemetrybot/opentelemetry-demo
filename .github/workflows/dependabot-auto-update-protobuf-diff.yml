@@ -11,10 +11,10 @@ permissions:
 jobs:
   dependabot-auto-update-protobuf-diff:
     permissions:
-      actions: write # required for interacting with GitHub Actions
-      pull-requests: write # required for updating pull requests
-      contents: write # required for pushing changes
-      packages: write # required for package operations
+      actions: write  # required for interacting with GitHub Actions
+      pull-requests: write  # required for updating pull requests
+      contents: write  # required for pushing changes
+      packages: write  # required for package operations
     runs-on: ubuntu-latest
     # Only run this job if the PR is opened by dependabot and the last commit is from dependabot
     if: github.event.pull_request.user.login == 'dependabot[bot]'

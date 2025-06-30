@@ -6,10 +6,15 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: read
+
 jobs:
   build_and_push_images:
     uses: ./.github/workflows/component-build-images.yml
     if: github.repository == 'open-telemetry/opentelemetry-demo'
+    permissions:
+      packages: write
     with:
       push: true
       version: ${{ github.event.release.tag_name }}

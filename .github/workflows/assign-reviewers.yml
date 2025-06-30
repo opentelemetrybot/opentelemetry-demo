@@ -10,10 +10,15 @@ on:
   # because repository write permission is needed to assign reviewers
   pull_request_target:
 
+permissions:
+  contents: read
+
 jobs:
   assign-reviewers:
     if: github.repository == 'open-telemetry/opentelemetry-demo'
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write  # required by the reusable workflow
     steps:
       - uses: dyladan/component-owners@main
         with:

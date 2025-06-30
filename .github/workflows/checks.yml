@@ -15,7 +15,6 @@ permissions:
 jobs:
   build_images:
     permissions:
-      contents: read
       packages: write
     uses: ./.github/workflows/component-build-images.yml
     with:

@@ -77,9 +77,14 @@ checklinks:
 	@if ! npm ls @umbrelladocs/linkspector; then npm install; fi
 	linkspector check
 
+.PHONY: check-workflow-permissions
+check-workflow-permissions:
+	@echo "Checking GitHub workflow permissions..."
+	@python3 internal/tools/verify_workflow_permissions.py --quiet
+
 # Run all checks in order of speed / likely failure.
 .PHONY: check
-check: misspell markdownlint checklicense checklinks
+check: misspell markdownlint checklicense checklinks check-workflow-permissions
 	@echo "All checks complete"
 
 # Attempt to fix issues / regenerate tables.

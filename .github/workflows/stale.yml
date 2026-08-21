@@ -19,6 +19,7 @@ jobs:
   stale:
     name: Close stale pull requests
     permissions:
+      actions: write  # because actions/stale deletes its old cache before saving new one
       issues: write  # for actions/stale to close stale issues
       pull-requests: write  # for actions/stale to close stale PRs
     runs-on: ubuntu-latest
